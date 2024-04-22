@@ -39,6 +39,13 @@
 
                 <div class="text-end">
                     <a href="{{ route('notes.edit', $note->id) }}" class="btn btn-warning">Editar Nota</a>
+
+                    <form action="{{ route('notas.destroy', $note->id) }}" method="post">
+                        @cdrf
+                        @method('delete')
+
+                        <input type="submit" value="Eliminar Nota" class="btn btn-danger" onclick="return confirm('¿Estás seguro que quieres eliminarla?')">
+                    </form>
                 </div>
             </div>
         </div>
